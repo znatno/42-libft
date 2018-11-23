@@ -10,29 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *s)
+#include "includes/libft.h"
+
+
+int	getnb(char const *s, int i, int sym, int nb)
 {
-	int nb;
-	int sym;
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		if (9223372036854775807 - nb < s[i] - '0')
+		{
+			if (sym == -1)
+				return (0);
+			else
+				return (-1);
+		}
+		nb = nb * 10 + s[i] - '0';
+		i++;
+	}
+	if (sym == -1)
+		nb = -nb;
+	return (nb);
+}
+
+
+int		ft_atoi(char const *s)
+{
+	int	nb;
+	int	sym;
+	int	i;
 
 	nb = 0;
 	sym = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
+	i = 0;
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
 	{
-		s++;
-	}
-	if (*s == '+' || *s == '-')
-	{
-		if (*s == '-')
+		if (s[i] == '-')
 			sym = -1;
-		s++;
+		i++;
 	}
-	while (*s >= '0' && *s <= '9')
-	{
-		nb *= 10;
-		nb += *s - '0';
-		s++;
-	}
-	return (nb * sym);
+	return (getnb(s, i, sym, nb));
 }
-

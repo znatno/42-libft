@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <libft.h>
+
+char	*ft_strcpy(char *dest, const char *src)
 {
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
+	int	i;
+
+	i = -1;
+	while (*(src + ++i))
+		*(dest + i) = *(src + i);
+	*(dest + i) = '\0';
 	return (dest);
 }
