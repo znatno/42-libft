@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibohun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 13:47:26 by ibohun            #+#    #+#             */
-/*   Updated: 2018/07/17 16:29:09 by ibohun           ###   ########.fr       */
+/*   Created: 2018/07/17 11:09:10 by ibohun            #+#    #+#             */
+/*   Updated: 2018/07/17 16:28:14 by ibohun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *s, const char *to_find, size_t len)
 {
-	while (n-- > 0)
+	size_t 	i;
+	int	j;
+	
+	i = 0;
+	j = 0;
+	if (!ft_strlen(to_find))
+		return ((char *)s);
+	while (*s && ft_strlen(to_find) <= len)
 	{
-		if ((unsigned char)*s1 != (unsigned char)*s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if ((unsigned char)*s1 == '\0')
-			return (0);
-		s1++;
-		s2++;
+		while (to_find[i])
+		{
+			if (s[i] != to_find[i])
+				j = 1;
+			i++;
+		}
+		if  (j == 0)
+			return ((char*)s);
+		len--;
+		i = 0;
+		j = 0;
+		s++;
 	}
 	return (0);
 }

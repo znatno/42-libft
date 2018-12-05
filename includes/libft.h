@@ -17,8 +17,12 @@
 # include <stdlib.h>
 
 
-int	ft_strlen(char const *s);
+size_t	ft_strlen(char const *s);
 char	*ft_strdup(char const *s);
+char	*ft_strcpy(char *dest, const char *src);
+char	*ft_strncpy(char *dest, const char *src, size_t len);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strncat(char *dest, const char *src, size_t len);
 
 int	ft_atoi(char const *s);
 

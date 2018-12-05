@@ -10,23 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	char	*start;
-	char	*find;
+#include "libft.h"
 
-	while (*str)
+char	*ft_strstr(const char *s, const char *to_find)
+{
+	size_t 	i;
+	int	j;
+	
+	i = 0;
+	j = 0;
+	if (!ft_strlen(to_find))
+		return ((char *)s);
+	while (*s)
 	{
-		start = str;
-		find = to_find;
-		while (*str == *find && *str != '\0')
+		while (to_find[i])
 		{
-			str++;
-			find++;
+			if (s[i] != to_find[i])
+				j = 1;
+			i++;
 		}
-		if (!*find)
-			return (start);
-		str++;
+		if  (j == 0)
+			return ((char*)s);
+		i = 0;
+		j = 0;
+		s++;
 	}
 	return (0);
 }
