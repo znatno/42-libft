@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-
-int	getnb(char const *s, int i, int sym, int nb)
+static int	getnb(char const *s, int i, int sym, int nb)
 {
 	while (s[i] >= '0' && s[i] <= '9')
 	{
@@ -32,12 +31,11 @@ int	getnb(char const *s, int i, int sym, int nb)
 	return (nb);
 }
 
-
 int		ft_atoi(char const *s)
 {
-	int	nb;
-	int	sym;
-	int	i;
+	static int	nb;
+	int		sym;
+	int		i;
 
 	nb = 0;
 	sym = 1;
