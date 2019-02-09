@@ -6,15 +6,13 @@
 #    By: ibohun <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/26 17:47:25 by ibohun            #+#    #+#              #
-#    Updated: 2018/10/26 21:20:44 by ibohun           ###   ########.fr        #
+#    Updated: 2019/01/13 23:00:34 by ibohun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
-
-DIR = includes/
 
 SRC = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 	ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c \
@@ -37,9 +35,8 @@ OBJ = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAGS) -I $(DIR) -c $(SRC)
+	@gcc $(FLAGS) -c $(SRC)
 	@ar rcs $(NAME) $(OBJ)
-	@ranlib $(NAME)
 
 clean:
 	@rm -rf $(OBJ)

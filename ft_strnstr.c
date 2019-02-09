@@ -6,7 +6,7 @@
 /*   By: ibohun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 11:09:10 by ibohun            #+#    #+#             */
-/*   Updated: 2018/07/17 16:28:14 by ibohun           ###   ########.fr       */
+/*   Updated: 2019/01/13 22:45:17 by ibohun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *s, const char *to_find, size_t len)
 {
-	size_t 	i;
-	int	j;
-	
+	size_t	i;
+	int		j;
+
 	i = 0;
 	j = 0;
 	if (!ft_strlen(to_find))
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *s, const char *to_find, size_t len)
 				j = 1;
 			i++;
 		}
-		if  (j == 0)
+		if (j == 0)
 			return ((char*)s);
 		len--;
 		i = 0;

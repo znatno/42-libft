@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ibohun <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/13 22:49:58 by ibohun            #+#    #+#             */
+/*   Updated: 2019/01/13 22:50:15 by ibohun           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_count_words(char const *s, char c)
@@ -24,7 +36,7 @@ static char	*ft_putword(char const *s, char c)
 {
 	char	*word;
 	size_t	i;
-	
+
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 		i++;
@@ -40,7 +52,6 @@ static char	*ft_putword(char const *s, char c)
 	word[i] = '\0';
 	return (word);
 }
-
 
 char		**ft_strsplit(char const *s, char c)
 {

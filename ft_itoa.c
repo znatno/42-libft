@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ibohun <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/13 22:27:48 by ibohun            #+#    #+#             */
+/*   Updated: 2019/01/13 22:27:51 by ibohun           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	len(long nb)
@@ -36,11 +48,11 @@ static char	*result(char *s, long n, int i)
 	return (s);
 }
 
-char	*ft_itoa(int nb)
+char		*ft_itoa(int nb)
 {
 	char	*s;
 	long	n;
-	int	i;
+	int		i;
 
 	n = nb;
 	i = len(n);

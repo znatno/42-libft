@@ -6,7 +6,7 @@
 /*   By: ibohun <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 17:14:55 by ibohun            #+#    #+#             */
-/*   Updated: 2018/10/26 20:23:18 by ibohun           ###   ########.fr       */
+/*   Updated: 2019/01/13 22:20:25 by ibohun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ static int	getnb(char const *s, int i, int sym, int nb)
 	return (nb);
 }
 
-int		ft_atoi(char const *s)
+int			ft_atoi(char const *s)
 {
-	static int	nb;
-	int		sym;
-	int		i;
+	int	nb;
+	int	sym;
+	int	i;
 
 	nb = 0;
 	sym = 1;
